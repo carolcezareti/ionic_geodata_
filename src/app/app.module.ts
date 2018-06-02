@@ -6,6 +6,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PaisPageModule } from '../pages/pais/pais.module';
+import { ContinentePageModule } from '../pages/continente/continente.module';
+import { PaisPage } from '../pages/pais/pais';
+import { ContinentePage } from '../pages/continente/continente';
+import { DestinoPageModule } from '../pages/destino/destino.module';
+import {HttpModule} from "@angular/http";
+import { PaisesProvider } from '../providers/paises/paises';
 
 @NgModule({
   declarations: [
@@ -14,17 +21,24 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    PaisPageModule,
+    ContinentePageModule,
+    DestinoPageModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PaisPage,
+    ContinentePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PaisesProvider
   ]
 })
 export class AppModule {}
