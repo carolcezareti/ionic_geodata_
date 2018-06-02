@@ -1,3 +1,7 @@
 export interface Pais{
+    id: number;
     nome: string;
-    continente:string;}
+    capital: string;
+    regiao: string;
+    continente: string;
+}

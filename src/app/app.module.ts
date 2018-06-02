@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SQLite } from '@ionic-native/sqlite'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +14,8 @@ import { ContinentePage } from '../pages/continente/continente';
 import { DestinoPageModule } from '../pages/destino/destino.module';
 import {HttpModule} from "@angular/http";
 import { PaisesProvider } from '../providers/paises/paises';
+import { DatabaseProvider } from '../providers/database/database';
+import { PaisProvider } from '../providers/pais/pais';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,11 @@ import { PaisesProvider } from '../providers/paises/paises';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PaisesProvider
+    PaisesProvider,
+    SQLite,
+    DatabaseProvider,
+    PaisProvider
+
   ]
 })
 export class AppModule {}

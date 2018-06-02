@@ -19,17 +19,12 @@ import { PaisesProvider } from '../../providers/paises/paises';
 })
 export class PaisPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private paisesProvider: PaisesProvider) {
+  public pais: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private countriesProvider: PaisesProvider) {
+    this.pais = this.navParams.get('pais');
   }
 
   ionViewDidLoad() {
-   this.movieProvider.getLatestMovies().subscribe(
-data => {
-const response = (data as any);
-const objeto_retorno = JSON.parse(response._body);
-console.log(objeto_retorno);
-}, error => {
-console.log(error);
-}
+  }
 
 }

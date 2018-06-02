@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { PaisPage } from './pais';
+import { ExibePaisPage } from './exibe-pais';
 
 @NgModule({
   declarations: [
-    PaisPage,
+    ExibePaisPage,
   ],
   imports: [
-    IonicPageModule.forChild(PaisPage),
+    IonicPageModule.forChild(ExibePaisPage),
   ],
 })
-export class PaisPageModule {
-  
-}
+export class ExibePaisPageModule {}
